@@ -88,6 +88,7 @@ public class KeycloakConfig extends KeycloakWebSecurityConfigurerAdapter {
 		// configuration for Swagger
 		.antMatchers("/swagger-ui.html/**", "/v2/api-docs","/csrf", "/", "/webjars/**", "/swagger-resources/**").permitAll()
 		.antMatchers("/environnement", "/healthcheck").permitAll()
+		.antMatchers("/notifications/**","/queue/**","/mywebsockets/**").permitAll()
 		// configuration for endpoints
 		.antMatchers(HttpMethod.GET, Constants.API_SURVEYUNITS).hasAnyRole(adminRole, interviewerRole,userLocalRole, userNationalRole)
 		.antMatchers(HttpMethod.GET, Constants.API_SURVEYUNITS_TEMP_ZONE).hasAnyRole(adminRole, interviewerRole,userLocalRole, userNationalRole)
